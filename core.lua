@@ -7,6 +7,9 @@ coreClass.__index = coreClass
 function coreClass.new()
     local self = setmetatable({}, coreClass)
 
+    self.active = {}
+    self.inactive = {}
+
     return self
 end
 
