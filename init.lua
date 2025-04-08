@@ -7,6 +7,10 @@ if (not _G["relrequire"]) then
     error("Missing relrequire implementation(). See github repo for more info.")
 end
 
+--- @type lovePlus
 loveGF.loveplus = relrequire("loveplus.init", ...)
+
+--- @type loveUIClass
+loveGF.loveUI = relrequire("loveUI.init")
 
 return loveGF
