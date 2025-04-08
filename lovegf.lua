@@ -9,6 +9,6 @@ if (not _G["relrequire"]) then
     end
 end
 
-loveGF.loveplus = relrequire("loveplus", ...)
+loveGF.loveplus = relrequire("loveplus.loveplus", ...)
 
 return loveGF
