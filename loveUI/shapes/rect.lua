@@ -1,4 +1,4 @@
---- @class RectClass
+--- @class rectClass
 local rect = {}
 rect.__index = rect
 
@@ -8,14 +8,14 @@ local collision = relrequire("..loveplus.collision", ...)
 
 --// Main
 
---- @class Rect : RectClass
+--- @class rect : rectClass
 --- Creates an instance of rect
 --- @param pos Vector2
 --- @param size Vector2
---- @return Rect
+--- @return rect
 function rect.new(pos, size)
 
-    --- @type Rect
+    --- @type rect
     local self = setmetatable({}, rect)
 
     self.isScaled = false

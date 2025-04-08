@@ -1,5 +1,11 @@
 --- @class loveUIClass
-local loveuiClass = {}
+local loveuiClass = {
+    shapes = {
+        --- @type rectClass
+        rect = relrequire("shapes.rect", ...)
+    }
+}
+
 loveuiClass.__index = loveuiClass
 
 --- @class loveui : loveUIClass
