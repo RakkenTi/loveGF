@@ -24,7 +24,7 @@ _G.relrequire = function(targetPath, scriptPath)
 
     local maxIndex = #scriptPathSplice - goBack
     for i = #scriptPathSplice, 1, -1 do
-        if (i >= #scriptPathSplice - goBack + 2) then
+        if (i >= maxIndex + 2) then
             table.remove(scriptPathSplice, i)
         end
     end
