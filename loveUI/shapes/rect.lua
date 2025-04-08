@@ -3,8 +3,8 @@ local rect = {}
 rect.__index = rect
 
 --// Modules
-local vector2 = relrequire("....loveplus.vector2", ...)
-local collision = relrequire("....loveplus.collision", ...)
+local vector2 = relrequire("...loveplus.vector2", ...)
+local collision = relrequire("...loveplus.collision", ...)
 
 --// Main
 
