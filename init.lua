@@ -11,6 +11,6 @@ end
 loveGF.loveplus = relrequire("loveplus.init", ...)
 
 --- @type loveUIClass
-loveGF.loveUI = relrequire("loveUI.init")
+loveGF.loveUI = relrequire("loveUI.init", ...)
 
 return loveGF
