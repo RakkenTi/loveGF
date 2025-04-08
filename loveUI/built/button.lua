@@ -1,8 +1,8 @@
 --// Modules
-local vector2 = relrequire("vector2", ...)
+local vector2 = relrequire("....loveplus.vector2", ...)
 local rect = relrequire("..shapes.rect", ...)
-local mouse =  relrequire("mouseUtils", ...)
-local run = relrequire("run", ...)
+local mouse =  relrequire("....loveplus.mouseUtils", ...)
+local run = relrequire("....loveplus.run", ...)
 
 --- A class for creating buttons
 --- A button is a rect wrapped with special events.
@@ -11,7 +11,7 @@ local button = {}
 button.__index = button
 
 --- @class button : buttonClass
---- @param RECT Rect
+--- @param RECT rect
 --- Wraps a rectangle with special button behaviour.
 function button.new(RECT)
     local self = setmetatable({}, button)
