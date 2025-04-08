@@ -2,13 +2,9 @@ local loveGF = {}
 
 -- Setup relrequire if not already defined.
 if (not _G["relrequire"]) then
-    _G.relrequire = function(targetPath, scriptPath)
-        local pattern = "^(.*)%."
-        local match = scriptPath:match(pattern) or ""
-        return require(match.."."..targetPath)
-    end
+    print("_G.relrequire() is missing! See repo for more information.")
 end
 
-loveGF.loveplus = relrequire("loveplus.loveplus", ...)
+loveGF.loveplus = relrequire("loveplus", ...)
 
 return loveGF
