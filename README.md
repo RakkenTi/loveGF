@@ -18,25 +18,18 @@ _G.relrequire = function(targetPath, scriptPath)
     local match = targetPath:sub(goBack + 1, #targetPath)
 
     local scriptPathSplice = {}
-
     for text in scriptPath:gmatch("(.-)%.+") do
         table.insert(scriptPathSplice, text)
     end
 
     local maxIndex = #scriptPathSplice - goBack
-
     for i = #scriptPathSplice, 1, -1 do
-        if (i >= maxIndex + 2) then
+        if (i >= #scriptPathSplice - goBack + 2) then
             table.remove(scriptPathSplice, i)
         end
     end
 
-    local resultPath = ""
-
-    for _, v in ipairs(scriptPathSplice) do
-        resultPath = resultPath .. v .. "."
-    end
-
+    local resultPath = table.concat(scriptPathSplice, ".") .. "."
     resultPath = resultPath .. match
 
     return require(resultPath)
