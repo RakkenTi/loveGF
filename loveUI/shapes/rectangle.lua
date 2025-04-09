@@ -156,7 +156,7 @@ function rectangle:draw()
 end
 
 function rectangle:update()
-
+    self:resize()
 end
 
 function rectangle:resize()
