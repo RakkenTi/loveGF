@@ -18,6 +18,12 @@ end
 --- @param classToImplement T The class to implement
 --- @return self | T Combination of self and T
 function baseClass:implement(classToImplement)
+
+    local parent = getmetatable(classToImplement)
+    if parent then
+        self:implement(parent)
+    end
+
     for k, v in pairs(classToImplement) do
         if not self[k] then
             self[k] = v
