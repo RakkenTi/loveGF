@@ -14,6 +14,6 @@ loveGF.loveplus = relrequire("loveplus.init", ...)
 loveGF.loveUI = relrequire("loveUI.init", ...)
 
 --- @type baseClass
-loveGF.class = relrequire("class", ...)
+loveGF.baseClass = relrequire("class", ...)
 
 return loveGF

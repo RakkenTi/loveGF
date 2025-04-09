@@ -1,33 +1,29 @@
---- Create a new class.
---- @param class table? The class to inherit. Providing no class creates a blank one.
---- @return baseClass
-return function(class)
+--- A module to simulate an OOP structure with classes.
+--- @class baseClass
+local baseClass = {}
+baseClass.__index = baseClass
 
-    class = class or {}
-    class.__index = class
+--- Extend the current class and create a subset class that references the old class.
+--- @return self Returns a subset of the class.
+function baseClass:extend()
+    local subclass = {}
+    subclass.__index = subclass
+    setmetatable(subclass, self)
+    return subclass
+end
 
-    --- @class baseClass
-    --- @field extend fun(self: table):baseClass Extend the current class and create a subset class that references the old class. Returns a subset of the class calling the function.
-    --- @field implement fun(self: table, classToImplement: table):self Implement the class passed in as a parameter. Copies methods from classToImplement to the current class.
-    --- Does not overwrite already existing methods.
-    local self = setmetatable({}, class)
-    self.__index = self
-
-    function class:extend()
-        local subclass = {}
-        subclass.__index = subclass
-        setmetatable(subclass, self)
-        return subclass
-    end
-
-    function class:implement(classToImplement)
-        for k, v in pairs(classToImplement) do
-            if not self[k] then
-                self[k] = v
-            end
+--- Implement the class passed in. Basically copies all methods from said class into the current class.
+--- Does not overwrite already existing methods.
+--- @param classToImplement table? The class to implement.
+--- @return self
+function baseClass:implement(classToImplement)
+    for k, v in pairs(classToImplement) do
+        if not self[k] then
+            self[k] = v
         end
     end
 
     return self
-
 end
+
+return baseClass
