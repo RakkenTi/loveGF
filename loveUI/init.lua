@@ -1,5 +1,9 @@
 --- @class loveUIClass
 local loveuiClass = {
+    built = {
+        --- @type buttonClass
+        button = relrequire("built.button", ...)
+    },
     shapes = {
         --- @type rectClass
         rect = relrequire("shapes.rect", ...)
