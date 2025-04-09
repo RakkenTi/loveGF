@@ -1,6 +1,6 @@
 --- Base class for any drawable UI.
 --- @class drawableUIBaseClassClass
-local drawableUIBaseClassClass = relrequire("....class")
+local drawableUIBaseClassClass = relrequire("....class", ...)
 
 function drawableUIBaseClassClass:draw()
     error({"Draw function is not implemented!"})
