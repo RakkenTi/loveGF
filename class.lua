@@ -13,17 +13,17 @@ function baseClass:extend()
 end
 
 --- Implement the class passed in. Basically copies all methods from said class into the current class.
---- Does not overwrite already existing methods.
---- @param classToImplement table? The class to implement.
---- @return self
+--- Functions in self are not overwritten.
+--- @generic T
+--- @param classToImplement T The class to implement
+--- @return self | T Combination of self and T
 function baseClass:implement(classToImplement)
     for k, v in pairs(classToImplement) do
         if not self[k] then
             self[k] = v
         end
     end
-
-    return self
+    return self  -- Return the merged class
 end
 
 return baseClass
