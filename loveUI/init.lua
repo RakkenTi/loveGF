@@ -1,5 +1,5 @@
 --- @type lovePlus
-local loveplus = relrequire(".loveplus.init")
+local loveplus = relrequire(".loveplus.init", ...)
 local run = loveplus.schedulers.run
 local window = loveplus.schedulers.window
 
