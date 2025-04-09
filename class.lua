@@ -5,12 +5,16 @@ return function(class)
     class = class or {}
     class.__index = class
 
+    --- @class baseClass
     local self = setmetatable({}, class)
 
+    --- Extend the current class and create a subset class that references the old class.
+    --- @return table Returns a subset of the class.
     function class:extend()
         local subclass = {}
         subclass.__index = subclass
         setmetatable(subclass, self)
+        return subclass
     end
 
     --- Implement the class passed in. Basically copies all methods from said class into the current class.
