@@ -1,10 +1,10 @@
 --// Parent Class
 --- @type drawableUIInterface
-local drawableUIInterface = relrequire(".base.drawableUIInterface")
+local drawableUIInterface = relrequire("..base.drawableUIInterface")
 --- @type vector2Class
-local vector2 = relrequire("..loveplus.vector2")
+local vector2 = relrequire("...loveplus.vector2")
 --- @type collisionClass
-local collision = relrequire("..loveplus.collision")
+local collision = relrequire("...loveplus.collision")
 
 --- @class rectangle
 local rectangle = drawableUIInterface:extend()
