@@ -69,7 +69,7 @@ function rectangle:setOffset(offset)
 end
 
 --- Clears the offset, allowing a new one to be set.
-function rect:clearOffset()
+function rectangle:clearOffset()
     self.offset = vector2.new()
     self:resize()
 end
