@@ -1,7 +1,7 @@
 --- Base class for any drawable UI.
 --- @class drawableUIInterface : baseClass
 --- @field children table
-local drawableUIBaseClass = relrequire("...class", ...):extend()
+local drawableUIBaseClass = relrequire("...class"):extend()
 
 -- Schedulers
 function drawableUIBaseClass:draw()

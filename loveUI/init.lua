@@ -1,5 +1,5 @@
 --- @type lovePlus
-local loveplus = relrequire("..loveplus.init", ...)
+local loveplus = relrequire("..loveplus.init")
 local run = loveplus.schedulers.run
 local window = loveplus.schedulers.window
 
@@ -7,11 +7,11 @@ local window = loveplus.schedulers.window
 local manager = {
     built = {
         --- @type buttonClass
-        button = relrequire("built.button", ...)
+        button = relrequire("built.button")
     },
     shapes = {
         --- @type rectClass
-        rect = relrequire("shapes.rect", ...)
+        rect = relrequire("shapes.rect")
     }
 }
 

@@ -10,10 +10,13 @@ git submodule update --init --recursive --remote
 ## RelRequire
 - The module depends on this specific relrequire implementation:
 ```lua
+-- Relative Require
 --- Allows to require relative to the current directory the .lua file is calling the function in.
 --- @param targetPath string The path of the .lua file to require.
---- @param scriptPath string Always pass "..." in the top scope.
-_G.relrequire = function(targetPath, scriptPath)
+_G.relrequire = function(targetPath)
+    local scriptPath = (debug.getinfo(2, "S").short_src):gsub("/","."):gsub(".lua","")
+    assert(scriptPath, "Mising scriptPath argument.")
+
     local goBack = #targetPath:match("^[%.]*")
     local match = targetPath:sub(goBack + 1, #targetPath)
 
@@ -31,7 +34,7 @@ _G.relrequire = function(targetPath, scriptPath)
 
     local resultPath = table.concat(scriptPathSplice, ".") .. "."
     resultPath = resultPath .. match
-
+    print(resultPath)
     return require(resultPath)
 end
 ```

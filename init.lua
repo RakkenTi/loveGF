@@ -8,12 +8,12 @@ if (not _G["relrequire"]) then
 end
 
 --- @type lovePlus
-loveGF.loveplus = relrequire("loveplus.init", ...)
+loveGF.loveplus = relrequire("loveplus.init")
 
 --- @type loveUIClass
-loveGF.loveUI = relrequire("loveUI.init", ...)
+loveGF.loveUI = relrequire("loveUI.init")
 
 --- @type baseClass
-loveGF.baseClass = relrequire("class", ...)
+loveGF.baseClass = relrequire("class")
 
 return loveGF

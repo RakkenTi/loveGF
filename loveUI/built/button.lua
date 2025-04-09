@@ -1,8 +1,8 @@
 --// Modules
-local vector2 = relrequire("...loveplus.vector2", ...)
-local rect = relrequire("..shapes.rect", ...)
-local mouse =  relrequire("...loveplus.mouseUtils", ...)
-local run = relrequire("...loveplus.run", ...)
+local vector2 = relrequire("...loveplus.vector2")
+local rect = relrequire("..shapes.rect")
+local mouse =  relrequire("...loveplus.mouseUtils")
+local run = relrequire("...loveplus.run")
 
 --- A class for creating buttons
 --- A button is a rect wrapped with special events.
