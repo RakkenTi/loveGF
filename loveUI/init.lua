@@ -4,7 +4,7 @@ local run = loveplus.schedulers.run
 local window = loveplus.schedulers.window
 
 --- @class loveUIClass
-local manager = {
+local loveui = {
     built = {
         --- @type buttonClass
         button = relrequire("built.button")
@@ -12,15 +12,22 @@ local manager = {
     shapes = {
         --- @type rectClass
         rect = relrequire("shapes.rect")
+    },
+    colours = {
+        blue = {0, 0, 125},
+        red = {125, 0, 0},
+        white = {255, 255, 255},
+        charcoal = {46, 64, 87},
+        cerise = {218, 65, 103},
+        asparagus = {127, 176, 105}
     }
 }
-
-manager.__index = manager
+loveui.__index = loveui
 
 --- @class loveui : loveUIClass
 --- Creates an instance of the loveui class.
-function manager.new()
-    local self = setmetatable({}, manager)
+function loveui.new()
+    local self = setmetatable({}, loveui)
 
     self.active = {}
 
@@ -50,14 +57,14 @@ end
 
 --- Add an UI element to the manager.
 --- @param drawableElement drawableUIInterface
-function manager:add(drawableElement)
+function loveui:add(drawableElement)
     self.active[drawableElement] = true
 end
 
 --- Remove an UI element from the manager.
 --- @param drawableElement drawableUIInterface
-function manager:remove(drawableElement)
+function loveui:remove(drawableElement)
     self.active[drawableElement] = nil
 end
 
-return manager
+return loveui
