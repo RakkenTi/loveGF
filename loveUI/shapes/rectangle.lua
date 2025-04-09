@@ -12,7 +12,7 @@ local rectangle = drawableUIInterface:extend()
 function rectangle.new(pos, size)
 
     --- @type rect
-    local self = setmetatable({}, rect)
+    local self = setmetatable({}, rectangle)
 
     self.isScaled = false
     self.pos = pos or vector2.new()
