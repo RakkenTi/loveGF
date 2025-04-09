@@ -143,7 +143,7 @@ end
 
 --// Methods
 function rectangle:draw()
-    love.graphics.setColor({self.colour[1], self.colour[2], self.colour[3], self.alpha})
+    love.graphics.setColor({self.colour[1] / 255, self.colour[2] / 255, self.colour[3] / 255, self.alpha})
     love.graphics.rectangle("fill", self.scalePos.x, self.scalePos.y, self.pixelSize.x, self.pixelSize.y, self.cornerRadius, self.cornerRadius)
     -- Outlines
     if (self.outline[1]) then
