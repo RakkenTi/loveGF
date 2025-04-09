@@ -31,6 +31,8 @@ function rectangle.new(pos, size)
     }
     self.enabled = true
 
+    self:resize()
+
     return self
 
 end
