@@ -32,21 +32,21 @@ function loveui.new()
     self.active = {}
 
     run.onUpdate(function()
-        --- @param activeElement drawableUIInterface
+        --- @param activeElement drawableUIBaseClass
         for activeElement, _ in pairs(self.active) do
             activeElement:update()
         end
     end)
 
     run.onDraw(function()
-        --- @param activeElement drawableUIInterface
+        --- @param activeElement drawableUIBaseClass
         for activeElement, _ in pairs(self.active) do
             activeElement:draw()
         end
     end)
 
     window.onResize(function()
-        --- @param activeElement drawableUIInterface
+        --- @param activeElement drawableUIBaseClass
         for activeElement, _ in pairs(self.active) do
             activeElement:resize()
         end
@@ -56,13 +56,13 @@ function loveui.new()
 end
 
 --- Add an UI element to the manager.
---- @param drawableElement drawableUIInterface
+--- @param drawableElement drawableUIBaseClass
 function loveui:add(drawableElement)
     self.active[drawableElement] = true
 end
 
 --- Remove an UI element from the manager.
---- @param drawableElement drawableUIInterface
+--- @param drawableElement drawableUIBaseClass
 function loveui:remove(drawableElement)
     self.active[drawableElement] = nil
 end
