@@ -11,6 +11,8 @@ local drawableUIBaseClass = relrequire("...class"):extend()
 drawableUIBaseClass.children = {}
 
 --- @type number
+drawableUIBaseClass.scale = 1
+--- @type number
 drawableUIBaseClass.rotation = 0
 --- @type number
 drawableUIBaseClass.alpha = 0
@@ -43,6 +45,11 @@ function drawableUIBaseClass:resize()
 end
 
 -- Base
+
+--// Constructor
+function drawableUIBaseClass.new(...)
+    error("drawableUIBaseClass Constructor has not been made!")
+end
 
 --// Setters
 --- Set the alpha of the element.
@@ -100,7 +107,21 @@ function drawableUIBaseClass:setRotation(newRotation)
     self.rotation = newRotation
 end
 
+--- Set the scale of the element.
+--- Scale applies uniformly to all dimensions.
+--- @param newScale number
+function drawableUIBaseClass:setScale(newScale)
+    self.scale = newScale
+end
+
 --// Getters
+
+--- Get the scale of the element.
+--- @return number
+function drawableUIBaseClass:getScale()
+    return self.scale
+end
+
 --- Get the rotation of the element.
 --- @return number
 function drawableUIBaseClass:getRotation()

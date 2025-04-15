@@ -11,3 +11,9 @@ local collision = relrequire("...loveplus.collision")
 --// Rectangle
 --- @class rectangle : drawableUIBaseClass
 local rectangle = drawableUIBaseClass:extend()
+
+function rectangle.new()
+
+end
+
+return rectangle
